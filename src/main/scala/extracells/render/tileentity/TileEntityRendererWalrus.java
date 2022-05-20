@@ -1,5 +1,6 @@
 package extracells.render.tileentity;
 
+import extracells.Extracells;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
@@ -13,7 +14,7 @@ public class TileEntityRendererWalrus extends TileEntitySpecialRenderer {
 	IModelCustom modelWalrus = AdvancedModelLoader
 			.loadModel(new ResourceLocation("extracells", "models/walrus.obj"));
 	ResourceLocation textureWalrus = new ResourceLocation("extracells",
-			"textures/blocks/walrus.png");
+			"textures/blocks/walrus" + (Extracells.highResWalrus() ? "_hr" : "") + ".png");
 
 	@Override
 	public void renderTileEntityAt(TileEntity tileentity, double x, double y,

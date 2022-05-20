@@ -1,5 +1,6 @@
 package extracells.render.item;
 
+import extracells.Extracells;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +14,7 @@ public class ItemRendererWalrus implements IItemRenderer {
 	IModelCustom modelWalrus = AdvancedModelLoader
 			.loadModel(new ResourceLocation("extracells", "models/walrus.obj"));
 	ResourceLocation textureWalrus = new ResourceLocation("extracells",
-			"textures/blocks/walrus.png");
+			"textures/blocks/walrus" + (Extracells.highResWalrus() ? "_hr" : "") + ".png");
 
 	@Override
 	public boolean handleRenderType(ItemStack item, ItemRenderType type) {

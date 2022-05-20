@@ -34,6 +34,7 @@ object Extracells {
 	var configFolder: File = null
 	var shortenedBuckets = true
 	var dynamicTypes = true
+	var highResWalrus = false
 	val integration = new Integration
 	
 	val ModTab = new CreativeTabs("Extra_Cells") {
@@ -74,8 +75,9 @@ object Extracells {
 		// Config
 		val config = new Configuration(new File(configFolder.getPath + File.separator + "AppliedEnergistics2" + File.separator + "extracells.cfg"))
 		config.load()
-		shortenedBuckets = config.get("Tooltips", "shortenedBuckets", true, "Shall the guis shorten large mB values?").getBoolean(true)
-		dynamicTypes = config.get("Storage Cells", "dynamicTypes", true, "Should the mount of bytes needed for a new type depend on the cellsize?").getBoolean(true)
+		shortenedBuckets = config.get("Tooltips", "shortenedBuckets", true, "Shall the guis shorten large mB values?").getBoolean()
+		dynamicTypes = config.get("Storage Cells", "dynamicTypes", true, "Should the mount of bytes needed for a new type depend on the cellsize?").getBoolean()
+		highResWalrus = config.get("Rendering", "highResWalrus", false, "Whether the original 925x420 high-resolution walrus texture should be used or a 231x105 version").getBoolean()
 		integration.loadConfig(config)
 
 		config.save()
