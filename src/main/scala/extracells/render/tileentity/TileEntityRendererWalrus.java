@@ -11,8 +11,9 @@ import org.lwjgl.opengl.GL11;
 
 public class TileEntityRendererWalrus extends TileEntitySpecialRenderer {
 
-	IModelCustom modelWalrus = AdvancedModelLoader.loadModel(new ResourceLocation("extracells", "models/walrus.obj"));
-	ResourceLocation textureWalrus = new ResourceLocation("extracells", "textures/blocks/walrus" + (Extracells.highResWalrus() ? "_hr" : "") + ".png");
+    IModelCustom modelWalrus = AdvancedModelLoader.loadModel(new ResourceLocation("extracells", "models/walrus.obj"));
+    ResourceLocation textureWalrus = new ResourceLocation(
+            "extracells", "textures/blocks/walrus" + (Extracells.highResWalrus() ? "_hr" : "") + ".png");
 
     @Override
     public void renderTileEntityAt(TileEntity tileentity, double x, double y, double z, float partialTickTime) {

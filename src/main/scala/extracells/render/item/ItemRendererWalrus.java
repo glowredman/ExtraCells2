@@ -11,10 +11,9 @@ import org.lwjgl.opengl.GL11;
 
 public class ItemRendererWalrus implements IItemRenderer {
 
-	IModelCustom modelWalrus = AdvancedModelLoader
-			.loadModel(new ResourceLocation("extracells", "models/walrus.obj"));
-	ResourceLocation textureWalrus = new ResourceLocation("extracells",
-			"textures/blocks/walrus" + (Extracells.highResWalrus() ? "_hr" : "") + ".png");
+    IModelCustom modelWalrus = AdvancedModelLoader.loadModel(new ResourceLocation("extracells", "models/walrus.obj"));
+    ResourceLocation textureWalrus = new ResourceLocation(
+            "extracells", "textures/blocks/walrus" + (Extracells.highResWalrus() ? "_hr" : "") + ".png");
 
     @Override
     public boolean handleRenderType(ItemStack item, ItemRenderType type) {
